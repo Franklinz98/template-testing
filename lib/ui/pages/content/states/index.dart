@@ -1,4 +1,4 @@
-import 'package:f_social_network/ui/pages/content/states/widgets/state_card.dart';
+import './widgets/state_card.dart';
 import 'package:flutter/material.dart';
 
 class UsersStates extends StatefulWidget {
@@ -17,7 +17,7 @@ class _State extends State<UsersStates> {
         StateCard(
             title: 'Iony Houst',
             content: 'Lorem ipsum dolor sit amet.',
-            picUrl: 'picUrl',
+            picUrl: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
             onChat: () => {}),
       ],
     );

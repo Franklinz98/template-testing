@@ -6,7 +6,7 @@ class MyTheme {
         brightness: Brightness.dark,
         primaryColor: Colors.blueGrey[900],
         accentColor: Colors.blueGrey,
-        scaffoldBackgroundColor: Colors.grey.shade300,
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat',
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
