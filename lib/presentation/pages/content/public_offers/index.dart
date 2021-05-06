@@ -1,19 +1,16 @@
 import './widgets/offer_card.dart';
 import 'package:flutter/material.dart';
 
-class PublicOffers extends StatefulWidget {
+class PublicOffers extends StatelessWidget {
+  // PublicOffes empty constructor
   PublicOffers({Key? key}) : super(key: key);
 
-  @override
-  _State createState() => _State();
-}
-
-class _State extends State<PublicOffers> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // OfferCard usage example
         OfferCard(
           title: 'Desarrollador backend de NodeJs',
           content:
@@ -22,6 +19,7 @@ class _State extends State<PublicOffers> {
           level: 'Experto',
           payment: 3000000,
           onCopy: () => {},
+          onApply: () => {},
         ),
       ],
     );

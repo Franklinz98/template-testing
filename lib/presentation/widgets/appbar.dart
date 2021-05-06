@@ -1,9 +1,10 @@
+import 'package:f_social_network/presentation/theme/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends AppBar {
-  String picUrl;
+  final String picUrl;
 
+  // Creating a custom AppBar that extends from Appbar with super();
   CustomAppBar({Key? key, required this.picUrl})
       : super(
             key: key,
@@ -18,11 +19,7 @@ class CustomAppBar extends AppBar {
             ),
             title: Text(
               'title'.toUpperCase(),
-              style: GoogleFonts.openSans(
-                fontSize: 18.0,
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
-              ),
+              style: AppTextStyle.appBarTitle,
             ),
             actions: [
               IconButton(

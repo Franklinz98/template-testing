@@ -1,11 +1,12 @@
-import 'package:f_social_network/ui/pages/content/public_offers/index.dart';
-import 'package:f_social_network/ui/pages/content/users_offers/index.dart';
-import 'package:f_social_network/ui/widgets/appbar.dart';
+import 'package:f_social_network/presentation/pages/content/public_offers/index.dart';
+import 'package:f_social_network/presentation/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class ContentPage extends StatelessWidget {
   const ContentPage({Key? key}) : super(key: key);
 
+  // We create a Scaffold that is used for all the content pages
+  // We only define one AppBar, and one scaffold.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
