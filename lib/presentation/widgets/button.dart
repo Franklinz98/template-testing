@@ -1,4 +1,4 @@
-import 'package:f_social_network/ui/theme/colors.dart';
+import 'package:f_social_network/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppButton extends TextButton {

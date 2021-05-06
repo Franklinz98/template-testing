@@ -1,12 +1,11 @@
-import 'package:f_social_network/ui/theme/colors.dart';
-import 'package:f_social_network/ui/widgets/card.dart';
+import 'package:f_social_network/presentation/theme/colors.dart';
+import 'package:f_social_network/presentation/widgets/card.dart';
 import 'package:flutter/material.dart';
 
-class StateCard extends AppCard {
+class PostCard extends AppCard {
   final String title, content, picUrl;
   final VoidCallback onChat;
-
-  StateCard(
+  PostCard(
       {Key? key,
       required this.title,
       required this.content,
@@ -22,7 +21,8 @@ class StateCard extends AppCard {
               child: CircleAvatar(
                 minRadius: 14.0,
                 maxRadius: 14.0,
-                backgroundImage: NetworkImage(picUrl),
+                backgroundImage: NetworkImage(
+                    picUrl),
               ),
             ),
           ),
