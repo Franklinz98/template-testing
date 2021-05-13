@@ -1,5 +1,4 @@
 import 'package:f_social_network/presentation/theme/colors.dart';
-import 'package:f_social_network/presentation/theme/text_styles.dart';
 import 'package:f_social_network/presentation/widgets/card.dart';
 import 'package:flutter/material.dart';
 

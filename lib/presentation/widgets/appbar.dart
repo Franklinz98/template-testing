@@ -1,11 +1,11 @@
-import 'package:f_social_network/presentation/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends AppBar {
   final String picUrl;
+  final BuildContext context;
 
   // Creating a custom AppBar that extends from Appbar with super();
-  CustomAppBar({Key? key, required this.picUrl})
+  CustomAppBar({Key? key, required this.context, required this.picUrl})
       : super(
             key: key,
             backgroundColor: Colors.white,
@@ -19,7 +19,7 @@ class CustomAppBar extends AppBar {
             ),
             title: Text(
               'title'.toUpperCase(),
-              style: AppTextStyle.appBarTitle,
+              style: Theme.of(context).textTheme.headline1,
             ),
             actions: [
               IconButton(

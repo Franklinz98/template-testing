@@ -12,6 +12,7 @@ class ContentPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         picUrl: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
+        context: context,
       ),
       body: SafeArea(
         child: Padding(

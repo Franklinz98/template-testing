@@ -1,4 +1,3 @@
-import 'package:f_social_network/presentation/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AppCard extends StatelessWidget {
