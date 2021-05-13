@@ -1,13 +1,15 @@
 import 'package:f_social_network/presentation/theme/colors.dart';
+import 'package:f_social_network/presentation/theme/text_styles.dart';
 import 'package:f_social_network/presentation/widgets/button.dart';
 import 'package:f_social_network/presentation/widgets/card.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class OfferCard extends AppCard {
+class OfferCard extends StatelessWidget {
   final String title, content, arch, level;
   final int payment;
-  final VoidCallback onCopy;
+  final VoidCallback onCopy, onApply;
+
+  // OfferCard constructor
   OfferCard(
       {Key? key,
       required this.title,
@@ -15,79 +17,78 @@ class OfferCard extends AppCard {
       required this.arch,
       required this.level,
       required this.payment,
-      required this.onCopy})
-      : super(
-          title: title,
-          content: content,
-          topRightWidget: IconButton(
-            icon: Icon(
-              Icons.copy_outlined,
-              color: AppColors.mountainMeadow,
-            ),
-            onPressed: onCopy,
-          ),
-          extraContent: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      required this.onCopy,
+      required this.onApply})
+      : super(key: key);
+
+  // We create a Stateless widget that contais an AppCard,
+  // Passing all the customizable views as parameters
+  @override
+  Widget build(BuildContext context) {
+    return AppCard(
+      title: title,
+      content: content,
+      // topRightWidget widget as an IconButton
+      topRightWidget: IconButton(
+        icon: Icon(
+          Icons.copy_outlined,
+          color: AppColors.mountainMeadow,
+        ),
+        onPressed: onCopy,
+      ),
+      // extraContent widget as a column that contains more details about the offer
+      // and an extra action (onApply)
+      extraContent: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Icon(
-                      Icons.architecture,
-                      color: AppColors.mountainMeadow,
-                    ),
-                  ),
-                  Text(
-                    arch,
-                    style: GoogleFonts.openSans(
-                      fontSize: 16.0,
-                      color: AppColors.mountainMeadow,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Icon(
-                      Icons.developer_mode_outlined,
-                      color: AppColors.mountainMeadow,
-                    ),
-                  ),
-                  Text(
-                    level,
-                    style: GoogleFonts.openSans(
-                      fontSize: 16.0,
-                      color: AppColors.mountainMeadow,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Icon(
-                      Icons.payments_outlined,
-                      color: AppColors.mountainMeadow,
-                    ),
-                  ),
-                  Text(
-                    '\$$payment',
-                    style: GoogleFonts.openSans(
-                      fontSize: 16.0,
-                      color: AppColors.mountainMeadow,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Icon(
+                  Icons.architecture,
+                  color: AppColors.mountainMeadow,
+                ),
               ),
-              SizedBox(
-                height: 8.0,
+              Text(
+                arch,
+                style: AppTextStyle.cardDetails,
               ),
-              AppButton(
-                text: 'Aplicar',
-                onPressed: () => {},
-              )
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Icon(
+                  Icons.developer_mode_outlined,
+                  color: AppColors.mountainMeadow,
+                ),
+              ),
+              Text(
+                level,
+                style: AppTextStyle.cardDetails,
+              ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Icon(
+                  Icons.payments_outlined,
+                  color: AppColors.mountainMeadow,
+                ),
+              ),
+              Text(
+                '\$$payment',
+                style: AppTextStyle.cardDetails,
+              ),
             ],
           ),
-        );
+          SizedBox(
+            height: 8.0,
+          ),
+          AppButton(
+            text: 'Aplicar',
+            onPressed: onApply,
+          )
+        ],
+      ),
+    );
+  }
 }

@@ -2,12 +2,14 @@ import './widgets/offer_card.dart';
 import 'package:flutter/material.dart';
 
 class PublicOffers extends StatefulWidget {
+  // PublicOffes empty constructor
   PublicOffers({Key? key}) : super(key: key);
 
   @override
   _State createState() => _State();
 }
 
+// PublicOffes custom state
 class _State extends State<PublicOffers> {
   final items = List<String>.generate(20, (i) => "Item $i");
 
@@ -16,6 +18,7 @@ class _State extends State<PublicOffers> {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
+        // OfferCard usage example
         return OfferCard(
           title: 'Desarrollador backend de NodeJs',
           content:
@@ -24,6 +27,7 @@ class _State extends State<PublicOffers> {
           level: 'Experto',
           payment: 3000000,
           onCopy: () => {},
+          onApply: () => {},
         );
       },
     );

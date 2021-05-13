@@ -2,12 +2,14 @@ import './widgets/offer_card.dart';
 import 'package:flutter/material.dart';
 
 class UsersOffers extends StatefulWidget {
+  // UsersOffers empty constructor
   UsersOffers({Key? key}) : super(key: key);
 
   @override
   _State createState() => _State();
 }
 
+// UsersOffers custom state
 class _State extends State<UsersOffers> {
   final items = List<String>.generate(20, (i) => "Item $i");
 
@@ -16,6 +18,7 @@ class _State extends State<UsersOffers> {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
+        // PostCard usage example
         return PostCard(
           title: 'Ludvig Wiese',
           content:
