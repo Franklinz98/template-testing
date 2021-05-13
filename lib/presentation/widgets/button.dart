@@ -5,6 +5,7 @@ class AppButton extends TextButton {
   final String text;
   final VoidCallback onPressed;
 
+  // Passing constructor params to super (TextButton constructor)
   AppButton({Key? key, required this.text, required this.onPressed})
       : super(
             key: key,
