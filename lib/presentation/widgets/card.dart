@@ -51,7 +51,7 @@ class AppCard extends StatelessWidget {
                   child: Text(
                     title,
                     textAlign: TextAlign.center,
-                    style: AppTextStyle.cardTitle,
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
                 topRightWidget != null
@@ -69,7 +69,7 @@ class AppCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: Text(
                   content!,
-                  style: AppTextStyle.cardContent,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
             if (extraContent != null)

@@ -1,6 +1,5 @@
 import 'package:f_social_network/presentation/theme/colors.dart';
 import 'package:f_social_network/presentation/theme/text_styles.dart';
-import 'package:f_social_network/presentation/widgets/button.dart';
 import 'package:f_social_network/presentation/widgets/card.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +51,7 @@ class OfferCard extends StatelessWidget {
               ),
               Text(
                 arch,
-                style: AppTextStyle.cardDetails,
+                style: Theme.of(context).textTheme.caption,
               ),
               Spacer(),
               Padding(
@@ -64,7 +63,7 @@ class OfferCard extends StatelessWidget {
               ),
               Text(
                 level,
-                style: AppTextStyle.cardDetails,
+                style: Theme.of(context).textTheme.caption,
               ),
               Spacer(),
               Padding(
@@ -76,17 +75,13 @@ class OfferCard extends StatelessWidget {
               ),
               Text(
                 '\$$payment',
-                style: AppTextStyle.cardDetails,
+                style: Theme.of(context).textTheme.caption,
               ),
             ],
           ),
           SizedBox(
             height: 8.0,
           ),
-          AppButton(
-            text: 'Aplicar',
-            onPressed: onApply,
-          )
         ],
       ),
     );
