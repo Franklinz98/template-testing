@@ -9,17 +9,20 @@ class UsersStates extends StatefulWidget {
 }
 
 class _State extends State<UsersStates> {
+  final items = List<String>.generate(20, (i) => "Item $i");
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        StateCard(
-            title: 'Iony Houst',
-            content: 'Lorem ipsum dolor sit amet.',
-            picUrl: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
-            onChat: () => {}),
-      ],
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index) {
+        return StateCard(
+          title: 'Iony Houst',
+          content: 'Lorem ipsum dolor sit amet.',
+          picUrl: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
+          onChat: () => {},
+        );
+      },
     );
   }
 }
