@@ -19,9 +19,12 @@ class PostCard extends StatelessWidget {
   // Passing all the customizable views as parameters
   @override
   Widget build(BuildContext context) {
-    throw AppCard(
+    return AppCard(
       title: title,
-      content: content,
+      content: Text(
+        content,
+        style: Theme.of(context).textTheme.bodyText1,
+      ),
       // topLeftWidget widget as an Avatar
       topLeftWidget: SizedBox(
         height: 48.0,
