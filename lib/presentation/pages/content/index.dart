@@ -1,3 +1,4 @@
+import 'package:f_social_network/presentation/pages/authentication/index.dart';
 import 'package:f_social_network/presentation/pages/content/location/index.dart';
 import 'package:f_social_network/presentation/pages/content/public_offers/index.dart';
 import 'package:f_social_network/presentation/pages/content/states/index.dart';
@@ -5,6 +6,7 @@ import 'package:f_social_network/presentation/pages/content/users_offers/index.d
 import 'package:f_social_network/presentation/theme/colors.dart';
 import 'package:f_social_network/presentation/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class ContentPage extends StatefulWidget {
   const ContentPage({Key? key}) : super(key: key);
@@ -47,6 +49,7 @@ class _State extends State<ContentPage> {
       appBar: CustomAppBar(
         picUrl: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
         context: context,
+        onSignOff: () => Get.off(() => Authentication()),
       ),
       body: SafeArea(
         child: Padding(

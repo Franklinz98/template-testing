@@ -1,15 +1,18 @@
+import 'package:f_social_network/presentation/pages/content/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final VoidCallback onViewSwitch;
+
+  const LoginPage({Key? key, required this.onViewSwitch}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-            child: Column(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Spacer(),
@@ -48,7 +51,7 @@ class LoginPage extends StatelessWidget {
                     padding: const EdgeInsets.all(14.0),
                     child: ElevatedButton(
                         onPressed: () {
-                          print("Login presionado");
+                          Get.off(() => ContentPage());
                         },
                         child: Text("Login")),
                   ),
@@ -56,13 +59,10 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             TextButton(
-                onPressed: () {
-                  print("Registrarse presionado");
-                },
-                child: Text("Registrarse")),
+                onPressed: this.onViewSwitch, child: Text("Registrarse")),
             Spacer(),
           ],
-        )),
+        ),
       ),
     );
   }

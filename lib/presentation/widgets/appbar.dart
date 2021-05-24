@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends AppBar {
   final String picUrl;
   final BuildContext context;
+  final VoidCallback onSignOff;
 
   // Creating a custom AppBar that extends from Appbar with super();
-  CustomAppBar({Key? key, required this.context, required this.picUrl})
+  CustomAppBar(
+      {Key? key,
+      required this.context,
+      required this.picUrl,
+      required this.onSignOff})
       : super(
             key: key,
             backgroundColor: Colors.white,
@@ -27,7 +32,7 @@ class CustomAppBar extends AppBar {
                   Icons.logout,
                   color: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: onSignOff,
               )
             ]);
 }
