@@ -35,6 +35,15 @@ class SignUpPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Correo electrónico',
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
                 obscureText: true,
                 obscuringCharacter: "*",
                 decoration: InputDecoration(
