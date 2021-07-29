@@ -34,6 +34,7 @@ class PostCard extends StatelessWidget {
             minRadius: 14.0,
             maxRadius: 14.0,
             backgroundImage: NetworkImage(picUrl),
+            backgroundColor: Colors.grey[200],
           ),
         ),
       ),

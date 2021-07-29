@@ -28,7 +28,9 @@ class LocationCard extends StatelessWidget {
       topLeftWidget: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Icon(
-          onUpdate != null ? Icons.my_location_outlined : Icons.near_me_outlined,
+          onUpdate != null
+              ? Icons.my_location_outlined
+              : Icons.near_me_outlined,
           color: AppColors.mountainMeadow,
         ),
       ),

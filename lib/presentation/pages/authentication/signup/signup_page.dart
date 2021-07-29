@@ -1,11 +1,22 @@
-import 'package:f_social_network/presentation/pages/content/index.dart';
+import 'package:f_social_network/domain/use_case/controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   final VoidCallback onViewSwitch;
+  final Controller controller;
 
-  const SignUpPage({Key? key, required this.onViewSwitch}) : super(key: key);
+  const SignUpPage(
+      {Key? key, required this.onViewSwitch, required this.controller})
+      : super(key: key);
+
+  @override
+  _State createState() => _State();
+}
+
+class _State extends State<SignUpPage> {
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +37,7 @@ class SignUpPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Usuario',
@@ -35,6 +47,7 @@ class SignUpPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Correo electrónico',
@@ -44,6 +57,7 @@ class SignUpPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 obscuringCharacter: "*",
                 decoration: InputDecoration(
@@ -60,7 +74,8 @@ class SignUpPage extends StatelessWidget {
                     padding: const EdgeInsets.all(14.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.off(() => ContentPage());
+                        // User signed up, updating state
+                        widget.controller.currentUser(true);
                       },
                       child: Text("Registrar"),
                     ),
@@ -69,7 +84,7 @@ class SignUpPage extends StatelessWidget {
               ],
             ),
             TextButton(
-              onPressed: this.onViewSwitch,
+              onPressed: widget.onViewSwitch,
               child: Text("Entrar"),
             ),
             Spacer(),
@@ -77,5 +92,13 @@ class SignUpPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
